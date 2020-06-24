@@ -4,11 +4,12 @@ int b1_in;
 int b2_in;
 int max_correct = 1023;
 int min_correct = 0;
+int r_pin = 0;
 #include <LiquidCrystal.h>
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 void setup() {
-pinMode(A0 ,INPUT);
+pinMode(r_pin ,INPUT);
 pinMode(6 ,INPUT);
 pinMode(7 ,INPUT);
  lcd.begin(16, 2);
@@ -16,7 +17,7 @@ pinMode(7 ,INPUT);
 }
 
 void loop() {
-  r_in = analogRead(0);
+  r_in = analogRead(r_pin);
   radius_stats = map(r_in , min_correct , max_correct , 0 , 360);
   lcd.setCursor(0, 0);
   lcd.print(radius_stats);
