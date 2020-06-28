@@ -20,7 +20,7 @@ pinMode(max_pin ,INPUT);
 
 void loop() {
   r_in = analogRead(r_pin);
-  radius_stats = map(r_in , min_correct , max_correct , 0 , 360);
+  radius_stats = map(r_in , min_correct , max_correct , 0 , 359);
   lcd.setCursor(0, 0);
   lcd.print(radius_stats);
   Serial.println(radius_stats);
