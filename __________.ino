@@ -19,6 +19,7 @@ pinMode(max_pin ,INPUT);
 }
 
 void loop() {
+ for(int i = 0; i <= 500; i++){
   r_in = analogRead(r_pin);
   radius_stats = map(r_in , min_correct , max_correct , 0 , 359);
   lcd.setCursor(0, 0);
@@ -35,5 +36,7 @@ void loop() {
     max_correct = r_in;
   }
   Serial.println(max_correct);
-  delay(500);
+  delay(1);
+ }
+ 
 }
