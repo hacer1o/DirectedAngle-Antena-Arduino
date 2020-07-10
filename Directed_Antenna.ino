@@ -24,15 +24,9 @@ pinMode(right_cornerr , OUTPUT);
 }
 
 void loop() {
- for(int i = 0; i <= 500; i++){
+ for(int i = 0; i <= 100; i++){
   r_in = analogRead(r_pin);
   radius_stats = map(r_in , min_correct , max_correct , 0 , 359);
-  lcd.setCursor(0, 0);
-  lcd.print(radius_stats);
-  lcd.setCursor(0, 1);
-  lcd.print(user_stats);
-  Serial.println(radius_stats);
-  lcd.clear();
   b1_in = digitalRead(min_pin);
   b2_in = digitalRead(max_pin);
   if(b1_in){
@@ -57,4 +51,10 @@ void loop() {
  digitalWrite(11 , 1);
  }
  }
+  lcd.setCursor(0, 0);
+  lcd.print(radius_stats);
+  lcd.setCursor(0, 1);
+  lcd.print(user_stats);
+  Serial.println(radius_stats);
+  lcd.clear();
 }
