@@ -24,7 +24,7 @@ pinMode(right_cornerr , OUTPUT);
 }
 
 void loop() {
- for(int i = 0; i <= 100; i++){
+ for(int i = 0; i <= 160; i++){
   r_in = analogRead(r_pin);
   radius_stats = map(r_in , min_correct , max_correct , 0 , 359);
   b1_in = digitalRead(min_pin);
